@@ -1,2 +1,2 @@
 # Javascript
- Curso de Javascript do Curso rm Video
+ Curso de Javascript do Curso em Video
