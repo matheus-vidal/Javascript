@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+body {
+    margin: 0px;
+    height: 100vh;
+    position: relative;
+    background-color: rgba(255, 0, 251, 0.232);
+}
+
+main {
+    background-color: rgba(255, 0, 251, 0.5);
+    width: 400px;
+    padding: 0px 40px 20px 40px;
+    border-radius: 20px;
+    font: bold 1.05em arial;
+    font-variant: small-caps;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.94);
+}
+
+p {
+    text-align: center;
+}
+
+input {
+    margin: auto;
+    display: block;
+}
+
+#bot {
+    padding: 5px 20px;
+}
+
+hr {
+    margin-top: 16.8px;
+}
+
+#saida {
+    margin: 0px;
+    max-height: 200px;
+    overflow-y: auto;
+}

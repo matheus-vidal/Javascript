@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            text-align: center;
+            font: normal 20px arial;
+            margin-bottom: -10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <p id="centro">Qual foi a média do aluno?: <input type="number" name="med" id="med" placeholder="0,0 a 10,0"> <input type="submit" value="ENVIAR" onclick="mensagem()"></p>
+    <p></p>
+
+    <script>
+        function mensagem(){
+            var med = (document.getElementById("med").value).replace(",", ".")
+            var res = document.getElementsByTagName("p")[1]
+
+            if(med >= 6 && med <= 10){
+                res.innerHTML = `<span style="color: blue;">COM MÉDIA ${med.replace(".", ",")} O ALUNO SERÁ APROVADO</span>`
+            }
+            else if(med >= 0 && med < 6){
+                res.innerHTML = `<span style="color: red;">COM MÉDIA ${med.replace(".", ",")} O ALUNO SERÁ REPROVADO</span>`
+            }
+            else {
+                res.innerHTML = `<span style="color: gray;">A MÉDIA ${med.replace(".", ",")} É INVÁLIDA, DIGITE ALGO ENTRE 0,0 A 10,0</span>`
+            }
+        }
+    </script>
+</body>
+</html>

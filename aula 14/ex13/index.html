@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font: normal 1em cursive;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculo de Fatorial</h1>
+    Digite um número entre 1 a 21: 
+    <input type="number" name="num" id="num">
+    <input type="submit" value="calcular" onclick="calc()">
+    <p>O fatorial aparecera aqui...</p>
+
+    <script>
+        function calc(){
+            var num = Number(document.getElementById("num").value)
+            var res = document.getElementsByTagName("p")[0]
+
+            if(num >= 1 && num <= 21){
+                res.innerHTML = ''
+                var fat = 1
+                for(num; num >= 1; num--){
+                    res.innerHTML += num != 1?`${num} x `:`${num}`
+                    
+                    fat *= num
+                }
+
+                res.innerHTML +=  ` = ${fat}`
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            margin: 50px 0px 0px 63.06px;
+        }
+
+        main, p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <input type="number" name="num1" id="num1">
+        +
+        <input type="number" name="num2" id="num2">
+        <input type="button" value="SOMAR" id="somar" onclick="somar()">
+    </main>
+    <p>RESULTADO: <span id="res"></span></p>
+
+    <script>
+        function somar(){
+            var n1 = Number(document.querySelector("input#num1").value)
+            var n2 = Number(document.querySelector("input#num2").value)
+
+            var res = document.getElementById("res")
+            res.innerHTML = `<strong>${n1 + n2}</strong>`
+        }
+    </script>
+</body>
+</html>

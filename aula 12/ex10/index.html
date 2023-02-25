@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(30, 30, 30);
+            position: relative;
+            height: 100vh;
+            margin: 0px;
+        }
+
+        section {
+            background-color: #33b1ff;
+            width: 400px;
+            padding: 25px;
+            border-radius: 20px;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        p {
+            font: bold 17px arial;
+            line-height: 1.5em;
+            margin: 0px;
+        }
+
+        #resu {
+            text-align: center;
+        }
+
+        #enviar {
+            display: block;
+            margin: 10px auto auto auto;
+            width: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <p>
+        Numero 1: <input type="number" name="n1" id="n1"><br>
+        Numero 2: <input type="number" name="n2" id="n2">
+        </p>
+
+        <br>
+        
+        <p>
+            <input type="radio" name="op" id="som" checked><label for="som">somar</label>
+            
+            <input type="radio" name="op" id="sub"><label for="sub">subtrair</label>
+            
+            <input type="radio" name="op" id="mul"><label for="mul">multiplicar</label>
+            
+            <input type="radio" name="op" id="div"><label for="div">dividir</label>
+
+            <input type="submit" value="enviar" id="enviar" onclick="operar()">
+        </p>
+
+        <p id="resu"></p>
+    </section>
+
+    <script>
+        function operar(){
+            var num1 = document.getElementById("n1").value
+            var num2 = document.getElementById("n2").value
+            var ops = document.getElementsByName("op")
+            
+            if(String(num1).length == 0 || String(num2).length == 0){
+                alert("Verifique os dados e tente novamente")
+            }
+            else{
+                var texto = document.createElement("p")
+                
+                num1 = Number(String(num1).replace(",", "."))
+                num2 = Number(String(num2).replace(",", "."))
+
+                if(ops[0].checked){
+                    texto.innerHTML = `<hr>${num1} + ${num2} = ${num1 + num2}`
+                }
+                else if(ops[1].checked){
+                    texto.innerHTML = `<hr>${num1} - ${num2} = ${num1 - num2}`
+                }
+                else if(ops[2].checked){
+                    texto.innerHTML = `<hr>${num1} x ${num2} = ${num1 * num2}`
+                }
+                else if(ops[3].checked){
+                    texto.innerHTML = `<hr>${num1} / ${num2} = ${(num1 / num2).toFixed(3)}`
+                }
+            }
+
+            texto = texto.innerHTML.replace(".", ",").replace(".", ",").replace(".", ",")
+
+            document.getElementById("resu").innerHTML = texto
+        }
+    </script>
+</body>
+</html>
